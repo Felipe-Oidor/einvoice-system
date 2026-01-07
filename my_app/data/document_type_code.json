@@ -1,0 +1,372 @@
+{
+    "data": {
+        "invoiceDocumentTypes": [
+            {
+                "code": "01",
+                "description": "Factura electrónica de venta"
+            },
+            {
+                "code": "03",
+                "description": "Instrumento electrónico de transmisión - tipo 03"
+            }
+        ],
+        "operationTypes": [
+            {
+                "code": "10",
+                "description": "Estándar"
+            },
+            {
+                "code": "11",
+                "description": "Mandatos"
+            },
+            {
+                "code": "12",
+                "description": "Transporte"
+            }
+        ],
+        "correctionCodes": [
+            {
+                "code": "1",
+                "description": "Devolución parcial de los bienes y/o no aceptación parcial del servicio"
+            },
+            {
+                "code": "2",
+                "description": "Anulación de factura electrónica"
+            },
+            {
+                "code": "3",
+                "description": "Rebaja o descuento parcial o total"
+            },
+            {
+                "code": "4",
+                "description": "Ajuste de precio"
+            },
+            {
+                "code": "5",
+                "description": "Descuento comercial por pronto pago"
+            },
+            {
+                "code": "6",
+                "description": "Descuento comercial por volumen de ventas"
+            }
+        ],
+        "creditNoteOperationTypes": [
+            {
+                "code": "20",
+                "description": "Nota Crédito que referencia una factura electrónica"
+            },
+            {
+                "code": "22",
+                "description": "Nota Crédito sin referencia a una factura electrónica"
+            }
+        ],
+        "productIdentificationStandards": [
+            {
+                "id": "1",
+                "name": "Estándar de adopción del contribuyente"
+            },
+            {
+                "id": "2",
+                "name": "UNSPSC"
+            },
+            {
+                "id": "3",
+                "name": "Partida Arancelaria"
+            },
+            {
+                "id": "4",
+                "name": "GTIN"
+            }
+        ],
+        "claimConceptCodes": [
+            {
+                "code": "01",
+                "name": "Documento con inconsistencias"
+            },
+            {
+                "code": "02",
+                "name": "Mercancía no entregada totalmente"
+            },
+            {
+                "code": "03",
+                "name": "Mercancía no entregada parcialmente"
+            },
+            {
+                "code": "04",
+                "name": "Servicio no prestado"
+            }
+        ],
+        "eventCodes": [
+            {
+                "code": "030",
+                "name": "Acuse de recibo de Factura Electrónica de Venta"
+            },
+            {
+                "code": "031",
+                "name": "Reclamo de la Factura Electrónica de Venta"
+            },
+            {
+                "code": "032",
+                "name": "Recibo del bien y/o prestación del servicio"
+            },
+            {
+                "code": "033",
+                "name": "Aceptación expresa"
+            },
+            {
+                "code": "034",
+                "name": "Aceptación tácita"
+            }
+        ],
+        "identityDocumentTypes": [
+            {
+                "id": "1",
+                "name": "Registro civil"
+            },
+            {
+                "id": "2",
+                "name": "Tarjeta de identidad"
+            },
+            {
+                "id": "3",
+                "name": "Cédula de ciudadanía"
+            },
+            {
+                "id": "4",
+                "name": "Tarjeta de extranjería"
+            },
+            {
+                "id": "5",
+                "name": "Cédula de extranjería"
+            },
+            {
+                "id": "6",
+                "name": "NIT"
+            },
+            {
+                "id": "7",
+                "name": "Pasaporte"
+            },
+            {
+                "id": "8",
+                "name": "Documento de identificación extranjero"
+            },
+            {
+                "id": "9",
+                "name": "PEP"
+            },
+            {
+                "id": "10",
+                "name": "NIT otro país"
+            },
+            {
+                "id": "11",
+                "name": "NUIP"
+            }
+        ],
+        "customerTaxTypes": [
+            {
+                "id": "18",
+                "code": "01",
+                "name": "IVA"
+            },
+            {
+                "id": "21",
+                "code": "ZZ",
+                "name": "No aplica"
+            }
+        ],
+        "organizationTypes": [
+            {
+                "id": "1",
+                "name": "Persona Jurídica"
+            },
+            {
+                "id": "2",
+                "name": "Persona Natural"
+            }
+        ],
+        "paymentMethods": [
+            {
+                "code": "10",
+                "name": "Efectivo"
+            },
+            {
+                "code": "42",
+                "name": "Consignación"
+            },
+            {
+                "code": "20",
+                "name": "Cheque"
+            },
+            {
+                "code": "47",
+                "name": "Transferencia"
+            },
+            {
+                "code": "71",
+                "name": "Bonos"
+            },
+            {
+                "code": "72",
+                "name": "Vales"
+            },
+            {
+                "code": "1",
+                "name": "Medio de pago no definido"
+            },
+            {
+                "code": "49",
+                "name": "Tarjeta Débito"
+            },
+            {
+                "code": "48",
+                "name": "Tarjeta Crédito"
+            },
+            {
+                "code": "ZZZ",
+                "name": "Otro"
+            }
+        ],
+        "paymentForms": [
+            {
+                "code": "1",
+                "name": "Pago de contado"
+            },
+            {
+                "code": "2",
+                "name": "Pago a crédito"
+            }
+        ],
+        "numberingRangeDocumentTypes": [
+            {
+                "code": "21",
+                "description": "Factura de Venta"
+            },
+            {
+                "code": "22",
+                "description": "Nota Crédito"
+            },
+            {
+                "code": "23",
+                "description": "Nota Débito"
+            },
+            {
+                "code": "24",
+                "description": "Documento Soporte"
+            },
+            {
+                "code": "25",
+                "description": "Nota de Ajuste Documento Soporte"
+            },
+            {
+                "code": "26",
+                "description": "Nómina"
+            },
+            {
+                "code": "27",
+                "description": "Nota de Ajuste Nómina"
+            },
+            {
+                "code": "28",
+                "description": "Nota de eliminación de nómina"
+            },
+            {
+                "code": "30",
+                "description": "Factura de talonario y de papel"
+            }
+        ],
+        "supportDocumentIdentityTypes": [
+            {
+                "id": "4",
+                "name": "Tarjeta de extranjería"
+            },
+            {
+                "id": "5",
+                "name": "Cédula de extranjería"
+            },
+            {
+                "id": "6",
+                "name": "NIT"
+            },
+            {
+                "id": "7",
+                "name": "Pasaporte"
+            },
+            {
+                "id": "8",
+                "name": "Documento de identificación extranjero"
+            },
+            {
+                "id": "9",
+                "name": "PEP"
+            },
+            {
+                "id": "10",
+                "name": "NIT otro país"
+            }
+        ],
+        "adjustmentNoteReasons": [
+            {
+                "code": "1",
+                "description": "Devolución parcial de los bienes y/o no aceptación parcial del servicio"
+            },
+            {
+                "code": "2",
+                "description": "Anulación del documento soporte"
+            },
+            {
+                "code": "3",
+                "description": "Rebaja o descuento parcial o total"
+            },
+            {
+                "code": "4",
+                "description": "Ajuste de precio"
+            },
+            {
+                "code": "5",
+                "description": "Otros"
+            }
+        ],
+        "chargeAndDiscountCodes": [
+            {
+                "code": "00",
+                "description": "Descuento no condicionado"
+            },
+            {
+                "code": "01",
+                "description": "Descuento condicionado"
+            },
+            {
+                "code": "02",
+                "description": "Recargo no condicionado"
+            },
+            {
+                "code": "03",
+                "description": "Recargo condicionado"
+            }
+        ],
+        "taxResponsibilities": [
+            {
+                "code": "O-13",
+                "description": "Gran contribuyente"
+            },
+            {
+                "code": "0-15",
+                "description": "Autorretenedor"
+            },
+            {
+                "code": "0-23",
+                "description": "Agente de retención de IVA"
+            },
+            {
+                "code": "0-47",
+                "description": "Régimen simple de tributación"
+            },
+            {
+                "code": "R-99-PN",
+                "description": "No responsable"
+            }
+        ]
+    }
+}
