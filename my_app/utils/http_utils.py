@@ -5,27 +5,37 @@ This module provides functions for making HTTP requests to external APIs.
 """
 
 import requests
+from typing import Literal, Optional
 
 
-def post_request(url: str, data: dict, headers: dict = None):
+def http_request(
+    method: Literal["GET", "POST", "PUT", "PATCH", "DELETE"],
+    url: str,
+    *,
+    params: Optional[dict] = None,
+    data: Optional[dict] = None,
+    json: Optional[dict] = None,
+    headers: Optional[dict] = None,
+    timeout: int = 5,
+):
     """
-    Send a POST request to the specified URL.
-
-    Args:
-        url (str): The target URL for the POST request.
-        data (dict): The data payload to send in the request body.
-        headers (dict, optional): Optional HTTP headers to include.
+    Generic HTTP request with error handling.
 
     Returns:
-        requests.Response or str: The response object if successful,
-        or an error message string if an exception occurs.
+        requests.Reponse if successful, otherwise a string describing the error.
     """
 
     try:
-        # Send the POST request with a 5-second timeout
-        response = requests.post(url, data=data, headers=headers, timeout=5)
+        response = requests.request(
+            method,
+            url,
+            params=params,
+            data=data,
+            json=json,
+            headers=headers,
+            timeout=timeout,
+        )
 
-        # Stop execution if the HTTP response indicates an error (for HTTP 4xx/5xx responses)
         response.raise_for_status()
 
     # Handle HTTP error response (4xx or 5xx)
