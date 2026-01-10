@@ -33,9 +33,14 @@ def refresh_access_token():
     )
 
     response = http_request(
+        method="POST",
         url=url_refresh,
         data=body,
         headers=header,
     )
+
+    # Check if response is an error string
+    if isinstance(response, str):
+        raise RuntimeError(f"Token refresh failed: {response}")
 
     store_tokens(auth_data=response.json())
