@@ -36,4 +36,8 @@ def authenticate():
         headers=header,
     )
 
+    # Check if response is an error string
+    if isinstance(response, str):
+        raise RuntimeError(f"Authentication failed: {response}")
+
     store_tokens(auth_data=response.json())
