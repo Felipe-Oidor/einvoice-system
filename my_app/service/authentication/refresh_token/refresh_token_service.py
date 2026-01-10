@@ -22,7 +22,7 @@ def refresh_access_token():
     The function does not return a value; tokens are stored automatically
     and can be retrieved using the token storage service.
     """
-    url_refresh = ENDPOINTS.get("authentication")["refresh"]
+    url_refresh = ENDPOINTS.get("authentication")["refreshToken"]
 
     body = authentication_credentials.refresh_payload(
         refresh_token=_tokens.refresh_token.get_secret_value()

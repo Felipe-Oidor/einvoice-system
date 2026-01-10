@@ -23,7 +23,7 @@ def authenticate():
     and can be retrieved using the token storage service.
     """
 
-    url_auth = ENDPOINTS.get("authentication")["auth"]
+    url_auth = ENDPOINTS.get("authentication")["login"]
 
     body = authentication_credentials.authentication_payload()
 
