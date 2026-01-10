@@ -6,7 +6,7 @@ access tokens from the OAuth2 authentication endpoint.
 """
 
 from my_app.config.constants import ENDPOINTS
-from my_app.utils.http_request import post_request
+from my_app.utils.http_utils import http_request
 from my_app.config.credentials import authentication_credentials
 from my_app.service.tokens.token_storage import store_tokens
 
@@ -16,16 +16,24 @@ def authenticate():
     Authenticate and obtain access tokens.
 
     Performs OAuth2 password grant authentication using credentials
-    from the environment and stores the obtained tokens.
+    from the environment and stores the obtained tokens internally
+    via the token storage service.
 
-    Returns:
-        AuthenticationResponse: The authentication response containing
-            access token, refresh token, and expiration information.
+    The function does not return a value; tokens are stored automatically
+    and can be retrieved using the token storage service.
     """
-    response = post_request(
-        url=ENDPOINTS.get("authentication")["auth"],
-        data=authentication_credentials.authentication_payload(),
-        headers=authentication_credentials.authentication_header(),
+
+    url_auth = ENDPOINTS.get("authentication")["login"]
+
+    body = authentication_credentials.authentication_payload()
+
+    header = authentication_credentials.authentication_header()
+
+    response = http_request(
+        method="POST",
+        url=url_auth,
+        data=body,
+        headers=header,
     )
 
     store_tokens(auth_data=response.json())

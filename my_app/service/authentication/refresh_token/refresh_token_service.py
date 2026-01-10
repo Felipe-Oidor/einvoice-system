@@ -6,7 +6,7 @@ obtained from the initial authentication process.
 """
 
 from my_app.config.constants import ENDPOINTS
-from my_app.utils.http_request import post_request
+from my_app.utils.http_utils import http_request
 from my_app.config.credentials import authentication_credentials
 from my_app.service.tokens.token_storage import _tokens, store_tokens
 
@@ -16,21 +16,26 @@ def refresh_access_token():
     Refresh the access token using a stored refresh token.
 
     Retrieves the stored refresh token and uses it to obtain a new
-    access token from the authentication endpoint.
+    access token from the authentication endpoint. The new tokens
+    are stored internally via the token storage service.
 
-    Returns:
-        AuthenticationResponse: The refreshed authentication response
-            containing new access token, refresh token, and expiration
-            information.
+    The function does not return a value; tokens are stored automatically
+    and can be retrieved using the token storage service.
     """
-    response = post_request(
-        url=ENDPOINTS.get("authentication")["refresh"],
-        data=authentication_credentials.refresh_payload(
-            refresh_token=_tokens.refresh_token.get_secret_value()
-        ),
-        headers=authentication_credentials.refresh_header(
-            _tokens.access_token.get_secret_value()
-        ),
+    url_refresh = ENDPOINTS.get("authentication")["refreshToken"]
+
+    body = authentication_credentials.refresh_payload(
+        refresh_token=_tokens.refresh_token.get_secret_value()
+    )
+
+    header = authentication_credentials.refresh_header(
+        _tokens.access_token.get_secret_value()
+    )
+
+    response = http_request(
+        url=url_refresh,
+        data=body,
+        headers=header,
     )
 
     store_tokens(auth_data=response.json())
