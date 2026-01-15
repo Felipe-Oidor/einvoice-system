@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container d-flex justify-content-center">
+        <form action="#" method="POST">
+            <h1 class="mb-4">Crear Factura</h1>
+
+            <!-- ========================================
+                        Section: Invoice Details
+                 ======================================== -->
+            <div class="row">
+                <div class="col-md-10 mb-3">
+                    <h2>Detalles de la factura</h2>
+                    {% include "invoice_form/invoice_details.html" %}
+                </div>
+            </div>
+
+            <!-- ========================================
+                        Section: Customer Information
+                 ======================================== -->
+            <div class="row">
+                <div class="col-md-10 mb-3">
+                    <h2>Datos del Cliente</h2>
+                    {% include "invoice_form/customer_information.html" %}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Crear Factura</button>
+        </form>
+    </div>
+{% endblock %}
