@@ -5,7 +5,7 @@ This module defines the routes related to the electronic invoice form
 using a Flask Blueprint.
 """
 
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 form_bp = Blueprint("form", __name__, url_prefix="/form")
 """
@@ -22,4 +22,4 @@ Attributes:
 
 @form_bp.route("/")
 def form():
-    return "<h1>Form</h1>"
+    return render_template("invoice_form/form_structure.html")
