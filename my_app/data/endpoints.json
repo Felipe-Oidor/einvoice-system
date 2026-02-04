@@ -1,0 +1,6 @@
+{
+    "authentication": {
+        "authentication_url": "https://api-sandbox.factus.com.co/oauth/token",
+        "refresh_token": "https://api-sandbox.factus.com.co/oauth/token"
+    }
+}
