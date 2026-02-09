@@ -6,7 +6,7 @@ This module handles the authentication process and stores access tokens.
 
 from my_app.settings.constants import ENDPOINTS
 from my_app.utils.http_utils import http_requests
-from my_app.settings.authentication import Authentication
+from my_app.settings.authentication_schemas.authentication import Authentication
 from my_app.services.tokens.tokens_storage import tokens_store
 
 
